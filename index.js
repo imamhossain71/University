@@ -3,7 +3,10 @@ const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  return res.status(200).send('Hello World!')
+})
+app.get('/user', (req, res) => {
+  return res.status(200).json({ name: 'John Doe', age: 30 })
 })
 
 app.listen(port, () => {
